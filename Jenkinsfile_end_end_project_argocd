@@ -12,7 +12,7 @@ pipeline {
             steps { 
                 echo 'Cloning GIT HUB Repo' 
                 // Clone the specified branch from the GitHub repository 
-                git branch: 'main', url: 'https://github.com/devopstraininghub/mindcircuit16d.git'
+                git branch: 'main', url: 'https://github.com/SwathiMarthala419/mindcircuit16d.git'
             }   
         } 
 	
@@ -24,8 +24,8 @@ pipeline {
         
         sh '''
             mvn sonar:sonar \
-                -Dsonar.host.url=http://13.220.82.203:9000 \
-                -Dsonar.login=squ_f21d96bcca2ac0be12229663009aa66157fa8e45
+                -Dsonar.host.url=http://184.73.31.233:9000 \
+                -Dsonar.login=squ_8a77e1dad03c268db58cc1e1fd4f6c36a83b590a
         '''
          }
        }
