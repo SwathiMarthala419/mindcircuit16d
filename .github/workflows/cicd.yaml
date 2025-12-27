@@ -2,7 +2,7 @@ name: Deploy to Tomcat via Manager API
 on:
   push:
     branches: 
-        main
+      - main
   workflow_dispatch:
   
 jobs:
@@ -14,7 +14,7 @@ jobs:
       - name: Build WAR using maven
         run: mvn clean package
       - name: Deploy to tomcat
-        run: 
+        run: |
               WAR_FILE=$(ls target/*.war | head -n 1)
               APP_NAME=myapp
               curl -u "${{ secrets.TOMCAT_USERNAME }}:${{ secrets.TOMCAT_PASSWORD }}" \
